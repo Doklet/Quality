@@ -5,13 +5,15 @@
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Dataset</label>
         <div class="col-sm-10">
-          <input class="form-control" placeholder="Select the dataset">
+          <select class="form-control" ng-model="dataset" ng-options="dataset as dataset.name for dataset in datasets"></select>
+          <small class="pull-left">The dataset is used to store the images when recording</small>
         </div>
       </div>
       <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">Model</label>
         <div class="col-sm-10">
-          <input class="form-control" placeholder="Select the model">
+          <select class="form-control" ng-model="model" ng-options="model as model.name for model in models"></select>
+          <small class="pull-left">The model is used when executing the application</small>
         </div>
       </div>
     </form>

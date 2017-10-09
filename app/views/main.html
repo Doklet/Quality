@@ -1,11 +1,15 @@
 <div class="container">
+  <div class="alert alert-danger" ng-show="error!=undefined">
+    <button type="button" class="close" ng-click="error=undefined"><span>&times;</span>
+    </button>
+    {{error}}
+  </div>
   <navigation></navigation>
   <div class="jumbotron">
-    <h1>'Allo, 'Allo!</h1>
+    <h1>Quality Inspection</h1>
     <p class="lead">
-      <img src="images/yeoman.png" alt="I'm Yeoman">
-      <br> Always a pleasure scaffolding your apps.
+      This application inspect the quality of a product
     </p>
-    <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+    <p>To start the application goto the <span><a href="#/execute"><strong>Execute</strong></a></span> to record images head to <span><a href="#/record"><strong>Record</strong></a></span> tab</p>
   </div>
 </div>
