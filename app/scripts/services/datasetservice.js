@@ -8,4 +8,16 @@ angular.module('qualityApp')
       return $http.get('/api/dataset');
     };
 
+    this.startRecording = function(datasetId) {
+      return $http.post('/api/dataset/recorder/' + datasetId + '/start');
+    };
+
+    this.stopRecording = function(datasetId) {
+      return $http.post('/api/dataset/recorder/' + datasetId + '/stop');
+    };
+
+    this.recordingIsRunning = function(datasetId) {
+      return $http.post('/api/dataset/recorder/' + datasetId + '/is_running');
+    };
+
   });

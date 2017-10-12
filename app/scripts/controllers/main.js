@@ -10,8 +10,8 @@ angular.module('qualityApp')
 
       DocletService.fetchById(docletId)
         .then(
-          function(doclet) {
-            Client.setDoclet(doclet);
+          function(response) {
+            Client.setDoclet(response.data);
           },
           function() {
             $scope.info = undefined;

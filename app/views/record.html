@@ -1,8 +1,13 @@
 <div class="container">
+  <div class="alert alert-danger" ng-show="error!=undefined">
+    <button type="button" class="close" ng-click="error=undefined"><span>&times;</span>
+    </button>
+    {{error}}
+  </div>
   <navigation></navigation>
   <div class="jumbotron background-white">
     <h2>Recording</h2>
-    <p>Select the label to record and then the start button below</p>
+    <p>Select the label to record and then press the start button below</p>
     <form class="form-horizontal">
       <div class="form-group">
         <label class="col-sm-offset-2 col-sm-2 control-label">Label</label>
@@ -12,6 +17,7 @@
         </div>
       </div>
     </form>
-    <button class="btn btn-lg btn-success">Start</button>
+    <button class="btn btn-lg btn-success" ng-click="start()">Start</button>
+    <button class="btn btn-lg btn-success" ng-click="stop()">Stop</button>
   </div>
 </div>

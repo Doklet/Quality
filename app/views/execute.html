@@ -1,8 +1,15 @@
 <div class="container">
+  <div class="alert alert-danger" ng-show="error!=undefined">
+    <button type="button" class="close" ng-click="error=undefined"><span>&times;</span>
+    </button>
+    {{error}}
+  </div>
   <navigation></navigation>
   <div class="jumbotron">
     <h2>Executing</h2>
     <p>Press the button below to start the application</p>
-    <button class="btn btn-lg btn-success">Start</button>
+    <button class="btn btn-lg btn-success" ng-click="start()">Start</button>
+    <button class="btn btn-lg btn-error" ng-click="stop()">Stop</button>
+    Running:{{isRunning}}
   </div>
 </div>
