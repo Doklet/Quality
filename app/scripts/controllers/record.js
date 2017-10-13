@@ -32,7 +32,7 @@ angular.module('qualityApp')
       DatasetService.startRecording(datasetId)
         .then(
           function() {
-            // Success do nothing
+            $scope.isRunning = true;
           },
           function() {
             $scope.info = undefined;
@@ -46,7 +46,7 @@ angular.module('qualityApp')
       DatasetService.stopRecording(datasetId)
         .then(
           function() {
-            // Success do nothing
+            $scope.isRunning = false;
           },
           function() {
             $scope.info = undefined;

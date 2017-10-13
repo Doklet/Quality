@@ -6,18 +6,24 @@
   </div>
   <navigation></navigation>
   <div class="jumbotron background-white">
-    <h2>Recording</h2>
-    <p>Select the label to record and then press the start button below</p>
-    <form class="form-horizontal">
-      <div class="form-group">
-        <label class="col-sm-offset-2 col-sm-2 control-label">Label</label>
-        <div class="col-sm-4">
-          <select class="form-control" ng-model="selectedLabel" ng-options="label as label.name for label in labels"></select>
-          <small class="pull-left">Select the label to record into</small>
+    <div ng-show="isRunning === false">
+      <h2>Recording</h2>
+      <p>Select the label to record and then press the start button below</p>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-offset-2 col-sm-2 control-label">Label</label>
+          <div class="col-sm-4">
+            <select class="form-control" ng-model="selectedLabel" ng-options="label as label.name for label in labels"></select>
+            <small class="pull-left">Select the label to record into</small>
+          </div>
         </div>
-      </div>
-    </form>
-    <button class="btn btn-lg btn-success" ng-click="start()">Start</button>
-    <button class="btn btn-lg btn-success" ng-click="stop()">Stop</button>
+      </form>
+      <button class="btn btn-lg btn-success" ng-click="start()">Start</button>
+    </div>
+    <div ng-show="isRunning === true">
+      <h2>Recording is running</h2>
+      <p>To stop the recording press the button below</p>
+      <button class="btn btn-lg btn-danger" ng-click="stop()">Stop</button>
+    </div>
   </div>
 </div>

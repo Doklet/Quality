@@ -5,7 +5,9 @@ angular.module('qualityApp')
 
     $scope.isRunning = false;
 
-    DocletService.isRunning('quality')
+    var doclet = Client.getDoclet();
+
+    DocletService.isRunning(doclet.id)
       .then(
         function(response) {
           $scope.isRunning = response.data.isRunning;
@@ -20,10 +22,10 @@ angular.module('qualityApp')
 
       var doclet = Client.getDoclet();
 
-      DocletService.startApplication('quality')
+      DocletService.startApplication(doclet.id)
         .then(
           function() {
-            // Success do nothing
+            $scope.isRunning = true;
           },
           function() {
             $scope.info = undefined;
@@ -36,10 +38,10 @@ angular.module('qualityApp')
 
       var doclet = Client.getDoclet();
 
-      DocletService.stopApplication('quality')
+      DocletService.stopApplication(doclet.id)
         .then(
           function() {
-            // Success do nothing
+            $scope.isRunning = false;
           },
           function() {
             $scope.info = undefined;

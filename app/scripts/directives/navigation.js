@@ -2,8 +2,10 @@
 
 
 angular.module('qualityApp')
-  .controller('navigationCtrl', function($scope, $location) {
+  .controller('navigationCtrl', function($scope, $location, Client) {
 
+    $scope.doclet = Client.getDoclet();
+    
     $scope.contains = function(viewLocation) {
       return $location.path().indexOf(viewLocation) !== -1;
     };
