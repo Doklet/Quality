@@ -5,15 +5,22 @@
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Dataset</label>
         <div class="col-sm-10">
-          <select class="form-control" ng-model="dataset" ng-options="dataset as dataset.name for dataset in datasets"></select>
+          <select class="form-control" ng-change="datasetChanged()" ng-model="settings.dataset" ng-options="dataset as dataset.name for dataset in datasets track by dataset.id"></select>
           <small class="pull-left">The dataset is used to store the images when recording</small>
         </div>
       </div>
       <div class="form-group">
-        <label for="inputPassword3" class="col-sm-2 control-label">Model</label>
+        <label for="inputPassword3" class="col-sm-2 control-label">Validation Model</label>
         <div class="col-sm-10">
-          <select class="form-control" ng-model="model" ng-options="model as model.name for model in models"></select>
-          <small class="pull-left">The model is used when executing the application</small>
+          <select class="form-control" ng-change="validationModelChanged()" ng-model="settings.validationModel" ng-options="model as model.name for model in models track by model.id"></select>
+          <small class="pull-left">The model used to validate the product</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">Product Model</label>
+        <div class="col-sm-10">
+          <select class="form-control" ng-change="productModelChanged()" ng-model="settings.productModel" ng-options="model as model.name for model in models track by model.id"></select>
+          <small class="pull-left">The model used to detect the type of product</small>
         </div>
       </div>
     </form>
