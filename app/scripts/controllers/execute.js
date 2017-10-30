@@ -14,7 +14,7 @@ angular.module('qualityApp')
         },
         function() {
           $scope.info = undefined;
-          $scope.error = 'Failed to start application';
+          $scope.error = 'Failed to check status of application';
         }
       );
 
@@ -45,7 +45,7 @@ angular.module('qualityApp')
           },
           function() {
             $scope.info = undefined;
-            $scope.error = 'Failed to start application';
+            $scope.error = 'Failed to stop application';
           }
         );
     }

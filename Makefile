@@ -4,7 +4,7 @@ name=quality
 user=root
 node=digitalocean-prod-0
 
-local-tx1-host=10.0.1.14
+local-tx1-host=10.0.1.19
 
 init:
 	bower install
@@ -47,9 +47,9 @@ deploy: build distro
 tx1deploy: distro
 	# Ensure the distro exist
 	ls distro/$(name).zip
-	scp distro/$(name).zip skyraid@$(local-tx1-host):~
+	scp distro/$(name).zip ubuntu@$(local-tx1-host):~
 	# Unzip the new release
-	ssh skyraid@$(local-tx1-host) 'unzip $(name) -d $(name)' > /dev/null
+	ssh ubuntu@$(local-tx1-host) 'cp $(name).zip /media/ubuntu/3261-3531/packages'
 	# TODO need to symlink this one
 
 devdeploy: build distro
