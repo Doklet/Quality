@@ -62,4 +62,9 @@ angular.module('qualityApp')
       SettingsService.setValue('productModel', value);
     }
 
+    $scope.filterChanged = function() {
+      var value = $scope.settings.filter;
+      SettingsService.setValue('filter', value);
+    }
+
   });
